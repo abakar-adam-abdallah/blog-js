@@ -1,0 +1,37 @@
+<?php
+session_start();
+$success = 0;
+$msg = "Une erreur est survenue (script.php)";
+
+if (!empty($_POST['new-login']))
+    {
+        $newLogPseudo = htmlspecialchars((strip_tags($_POST['new-login'])));
+                
+        if (strlen($newLogPseudo) < 25) 
+        {   
+            include('connexion_db.php');
+            $sql = "SELECT login FROM utilisateurs WHERE login = $newLogPseudo";
+            $result = $conn->query($sql);
+            if (mysqli_num_rows($result) == 0) {
+                $sql = "UPDATE utilisateurs SET login = '$newLogPseudo' WHERE id = '$_SESSION[id]";
+                $result = $conn->query($sql);
+                $_SESSION['loggedin'] = true;
+                $_SESSION['logUsername'] = $newLogPseudo; 
+                $_SESSION['id'] = $row['id'];
+                $msg = "<p style='color:green'> Modification prise en compte :) ! </p>";
+            }
+            else {
+                $msg = "<p style='color:red'> Login déjà pris </p>";
+            }
+        } 
+        else {
+            $msg = "<p style='color:red'> Votre pseudo ne peut pas dépasser 25 caractères </p>";
+        }
+    }
+    else {
+        $msg = "<p style='color:red'> Veuillez renseigner ce champ </p>";
+    }
+
+$res = ["success" => $success, "msg" => $msg];
+echo json_encode($res);
+?>

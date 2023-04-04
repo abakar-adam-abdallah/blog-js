@@ -1,0 +1,124 @@
+body{
+    list-style-type: none;
+    background: #35dc9b;
+    background: linear-gradient(to bottom, #35dc9b, #3857af);
+    font-family: Arial;
+    height: 768px;
+}
+
+header {
+    text-align: center;
+}
+
+.reg-div {
+    display: flex;
+    height: 450px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+.registration {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    block-size: 450px;
+    width: 500px;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.registration-title {
+    text-align: center;
+}
+
+.already-subscribed {
+    margin-top: 15px;
+}
+
+.connexion-btn{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+.log-div {
+    display: flex;
+    justify-content: center;
+    height: 450px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.connexion {
+    margin-top: 50px;
+    display: flex;
+    height: 450px;
+    width: 500px; 
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.connexion-title {
+    text-align: center;
+}
+
+.not-subscribed {
+    margin-top: 15px;
+}
+
+.registration-btn{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+input{
+    width:100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    width: 200px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+input:focus{
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+footer{
+    margin-top: 50px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #fff;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.footer-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
